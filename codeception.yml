@@ -1,0 +1,39 @@
+actor: Tester
+paths:
+    tests: tests
+    log: tests/_output
+    data: tests/_data
+    helpers: tests/_support
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+modules:
+    config:
+        WPBrowser:
+            url: 'http://ninjaforms.test'
+            adminUsername: admin
+            adminPassword: admin
+            adminUrl: /wp-admin
+        WPDb:
+            dsn: 'mysql:host=localhost;dbname=nf_acceptance_tests'
+            user: root
+            password: root
+            dump: tests/_data/dump.sql
+            populate: false
+            cleanup: true
+            url: 'http://ninjaforms.test'
+            tablePrefix: wp_
+        WPWebDriver:
+            url: 'http://ninjaforms.test'
+            browser: chrome
+            window_size: maximize
+            port: 4444
+            restart: true
+            wait: 2
+            adminUsername: admin
+            adminPassword: admin
+            adminUrl: /wp-admin
+        WPCLI:
+            path: /Users/kstover/Dev/WordPress/wp-content/plugins/ninja-forms/tests/tmp/wp
+            throw: true

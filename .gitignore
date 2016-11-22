@@ -1,0 +1,18 @@
+# OS Stuff
+
+# Node Stuff
+node_modules
+
+# IDE Stuff
+
+## phpStorm
+.idea
+
+## SublimeText
+*.sublime-workspace
+*.sublime-project
+
+# Project Stuff
+tests/
+vendor/
+composer.lock
