@@ -13,6 +13,9 @@ node_modules
 *.sublime-project
 
 # Project Stuff
-tests/
+tests/tmp/
+tests/_data/
+tests/_output/
+tests/_envs/
 vendor/
 composer.lock
