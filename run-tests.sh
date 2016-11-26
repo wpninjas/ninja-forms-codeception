@@ -56,7 +56,7 @@ PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DB_NAME=$modules_config_WPDb_dsn
 DB_NAME=${DB_NAME#*dbname=}
 WP_SITE_URL=$modules_config_WPBrowser_url
-SERVER_PATH="$PROJECT_ROOT/tests/tmp"
+SERVER_PATH="$PROJECT_ROOT"
 WP_SITE_PATH="$SERVER_PATH/wp"
 
 SELENIUM_URL="http://selenium-release.storage.googleapis.com/2.49/selenium-server-standalone-2.49.1.jar"
@@ -66,9 +66,9 @@ IFS=',' read -r -a ADD_ONS_ARRAY <<< "$ADD_ONS_STRING"
 
 mkdir -p $SERVER_PATH
 
-if [ ! -f "$SERVER_PATH/$SELENIUM_FILENAME" ]; then
+if [ ! -f "$SERVER_PATH/tmp/$SELENIUM_FILENAME" ]; then
     echo "Downloading Selenium..."
-    cd "$SERVER_PATH"
+    cd "$SERVER_PATH/tmp/"
     curl -O "$SELENIUM_URL"
 fi
 
@@ -100,14 +100,16 @@ PHP
     cd "$WP_SITE_PATH/wp-content/plugins/ninja-forms/"
     git checkout ${BRANCH}
 
-    # Activate any add-ons we have
-    for REPO in "${ADD_ONS_ARRAY[@]}"
-      do
-          git clone git@github.com:wpninjas/$REPO.git "$WP_SITE_PATH/wp-content/plugins/$REPO/"
-          cd "$WP_SITE_PATH/wp-content/plugins/$REPO/"
-          # git checkout develop
-      done
-
+    if [ 'false' != ${ADD_ONS_ARRAY[@]} ]; then
+      # Activate any add-ons we have
+      for REPO in "${ADD_ONS_ARRAY[@]}"
+        do
+            git clone git@github.com:wpninjas/$REPO.git "$WP_SITE_PATH/wp-content/plugins/$REPO/"
+            cd "$WP_SITE_PATH/wp-content/plugins/$REPO/"
+            # git checkout develop
+        done
+    fi
+    
     wp plugin activate --all
 
     wp db export "$PROJECT_ROOT/tests/_data/dump.sql"
@@ -125,22 +127,22 @@ fi
 cd $PROJECT_ROOT
 
 echo "Running Selenium..."
-pkill -f "java -jar $SERVER_PATH/$SELENIUM_FILENAME"
+pkill -f "java -jar $SERVER_PATH/tmp/$SELENIUM_FILENAME"
 find . -name 'selenium.log*' -delete
-java -jar "$SERVER_PATH/$SELENIUM_FILENAME" -log "$SERVER_PATH/selenium.log" &
+java -jar "$SERVER_PATH/tmp/$SELENIUM_FILENAME" -log "$SERVER_PATH/tmp/selenium.log" &
 sleep 1
-while ! grep -m1 'Selenium Server is up and running' < "$SERVER_PATH/selenium.log"; do
+while ! grep -m1 'Selenium Server is up and running' < "$SERVER_PATH/tmp/selenium.log"; do
     sleep 1
 done
 
 echo "Running Acceptance Tests with Codeception..."
 WP_SITE_PATH="$WP_SITE_PATH" \
-php ./vendor/bin/codecept run tests/acceptance/
-# php ./vendor/bin/codecept run tests/acceptance/021-BasicCalculationCept.php
+# php ./vendor/bin/codecept run tests/acceptance/
+php ./vendor/bin/codecept run tests/acceptance/021-BasicCalculationCept.php
 
 
 echo "Shutting down Selenium..."
-pkill -f "java -jar $SERVER_PATH/$SELENIUM_FILENAME"
+pkill -f "java -jar $SERVER_PATH/tmp/$SELENIUM_FILENAME"
 
 echo "Killing Firefox"
 pkill -9 firefox
