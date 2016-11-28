@@ -13,10 +13,17 @@ node_modules
 *.sublime-project
 
 # Project Stuff
-tests/_data/dump.sql
+tests/_data/*
+# exception to the rule
+!tests/_data/.gitkeep 
+
 tests/_output/*
-tests/tmp/*
+# exception to the rule
+!tests/_output/.gitkeep
 
 tmp/*
+# exception to the rule
+!tmp/.gitkeep
+
 vendor/
 composer.lock
