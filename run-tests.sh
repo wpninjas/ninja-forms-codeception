@@ -100,7 +100,7 @@ PHP
     cd "$WP_SITE_PATH/wp-content/plugins/ninja-forms/"
     git checkout ${BRANCH}
 
-    if [ 'false' != ${ADD_ONS_ARRAY[@]} ]; then
+    if [ 'false' != ${ADD_ONS_STRING} ]; then
       # Activate any add-ons we have
       for REPO in "${ADD_ONS_ARRAY[@]}"
         do
