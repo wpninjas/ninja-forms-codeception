@@ -26,6 +26,7 @@ $I->wait(2);
 $I->click( 'PUBLISH', '.nf-app-buttons span' );
 
 $I->waitForElement( '#title' );
+$I->wait( 2 );
 $I->fillField( '#title', 'My New Form' );
 
 $I->click( '.publish', '#nf-drawer' );
