@@ -140,7 +140,7 @@ WP_SITE_PATH="$WP_SITE_PATH" \
 # Get our acceptance tests from the ninja-forms/tests/ directory.
 # php ./vendor/bin/codecept run $WP_SITE_PATH/wp-content/plugins/ninja-forms/tests/acceptance/
 php ./vendor/bin/codecept run tests/acceptance/
-# php ./vendor/bin/codecept run tests/acceptance/011-EmailValidationCept.php
+# php ./vendor/bin/codecept run tests/acceptance/013-DateFieldCept.php
 # php ./vendor/bin/codecept run $WP_SITE_PATH/wp-content/plugins/ninja-forms/tests/acceptance/021-BasicCalculationCept.php
 
 
