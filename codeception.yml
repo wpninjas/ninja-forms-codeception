@@ -35,5 +35,5 @@ modules:
             adminPassword: admin
             adminUrl: /wp-admin
         WPCLI:
-            path: /Users/kstover/Dev/ninja-forms-codeception/tmp/wp
+            path: /ninja-forms-codeception/tmp/wp
             throw: true
