@@ -3,6 +3,8 @@ php:
   - 5.4
 services:
   - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE myapp_test;'
 script:
   - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
   - chmod +x wp-cli.phar
