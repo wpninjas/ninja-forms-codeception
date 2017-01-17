@@ -16,7 +16,7 @@ modules:
             adminPassword: admin
             adminUrl: /wp-admin
         WPDb:
-            dsn: 'mysql:host=localhost;dbname=nf_acceptance_tests'
+            dsn: 'mysql:host=127.0.0.1;dbname=nf_acceptance_tests'
             user: root
             password: root
             dump: tests/_data/dump.sql
