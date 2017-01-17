@@ -45,7 +45,7 @@ fi
 
 eval $(parse_yaml ./codeception.yml)
 
-DB_HOST=${DB_HOST-localhost}
+DB_HOST=${DB_HOST-127.0.0.1}
 DB_USER=${DB_USER-$modules_config_WPDb_user}
 DB_PASS=${DB_PASS-$modules_config_WPDb_password}
 START_FROM_SCRATCH=${START_FROM_SCRATCH-false}
