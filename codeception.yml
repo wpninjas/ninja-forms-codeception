@@ -18,7 +18,7 @@ modules:
         WPDb:
             dsn: 'mysql:host=127.0.0.1;dbname=nf_acceptance_tests'
             user: root
-            password: root
+            password:
             dump: tests/_data/dump.sql
             populate: false
             cleanup: true
