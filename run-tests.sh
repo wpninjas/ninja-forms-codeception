@@ -121,7 +121,7 @@ if [ 'true' == ${START_FROM_SCRATCH} ] || [ ! -d "$WP_SITE_PATH/wp-admin" ]; the
     cd $PROJECT_ROOT
 
     echo "Building Acceptance Tests with Codeception..."
-    php /vendor/bin/codecept build
+    php ../vendor/bin/codecept build
 fi
 
 cd $PROJECT_ROOT
@@ -139,7 +139,7 @@ echo "Running Acceptance Tests with Codeception..."
 WP_SITE_PATH="$WP_SITE_PATH" \
 # Get our acceptance tests from the ninja-forms/tests/ directory.
 # php ./vendor/bin/codecept run $WP_SITE_PATH/wp-content/plugins/ninja-forms/tests/acceptance/
-php /vendor/bin/codecept run tests/acceptance/
+php ../vendor/bin/codecept run tests/acceptance/
 # php ./vendor/bin/codecept run tests/acceptance/013-DateFieldCept.php
 # php ./vendor/bin/codecept run $WP_SITE_PATH/wp-content/plugins/ninja-forms/tests/acceptance/021-BasicCalculationCept.php
 
