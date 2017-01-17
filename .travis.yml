@@ -9,4 +9,4 @@ before_install:
   - chmod +x wp-cli.phar
   - sudo mv wp-cli.phar /usr/local/bin/wp
 script:
-  - bash run-tests.sh
+  - bash run-tests.sh -s -b master

@@ -110,6 +110,8 @@ PHP
         done
     fi
     
+    cd "$WP_SITE_PATH"
+
     wp plugin activate --all
 
     wp db export "$PROJECT_ROOT/tests/_data/dump.sql"
@@ -119,6 +121,7 @@ if [ 'true' == ${START_FROM_SCRATCH} ] || [ ! -d "$WP_SITE_PATH/wp-admin" ]; the
     install_wp
 
     cd $PROJECT_ROOT
+    ls
 
     echo "Building Acceptance Tests with Codeception..."
     php vendor/bin/codecept build
