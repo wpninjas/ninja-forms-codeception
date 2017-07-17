@@ -106,7 +106,7 @@ PHP
         do
             git clone git@github.com:wpninjas/$REPO.git "$WP_SITE_PATH/wp-content/plugins/$REPO/"
             cd "$WP_SITE_PATH/wp-content/plugins/$REPO/"
-            # git checkout develop
+            git checkout develop
         done
     fi
     
@@ -140,9 +140,7 @@ WP_SITE_PATH="$WP_SITE_PATH" \
 # Get our acceptance tests from the ninja-forms/tests/ directory.
 # php ./vendor/bin/codecept run $WP_SITE_PATH/wp-content/plugins/ninja-forms/tests/acceptance/
 php ./vendor/bin/codecept run tests/acceptance/
-# php ./vendor/bin/codecept run tests/acceptance/013-DateFieldCept.php
-# php ./vendor/bin/codecept run $WP_SITE_PATH/wp-content/plugins/ninja-forms/tests/acceptance/021-BasicCalculationCept.php
-
+# php ./vendor/bin/codecept run tests/acceptance/021-BasicCalculationCept.php
 
 echo "Shutting down Selenium..."
 pkill -f "java -jar $SERVER_PATH/tmp/$SELENIUM_FILENAME"

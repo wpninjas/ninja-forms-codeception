@@ -6,7 +6,6 @@ $I->wantTo( 'create a new form, submit it, and verify the submission' );
 $I->loginAsAdmin();
 
 $I->amOnPage( '/wp-admin/admin.php?page=ninja-forms&form_id=new' );
-$I->click( '.nf-master-control' );
 
 $I->waitForText( 'First Name' );
 $I->click( '[data-id="firstname"]' );

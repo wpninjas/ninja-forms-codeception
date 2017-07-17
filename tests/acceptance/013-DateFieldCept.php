@@ -6,7 +6,6 @@ $I->wantTo( 'make sure the date picker shows up properly' );
 $I->loginAsAdmin();
 
 $I->amOnPage( '/wp-admin/admin.php?page=ninja-forms&form_id=new' );
-$I->click( '.nf-master-control' );
 
 $I->waitForText( 'Date' );
 $I->click( '[data-id="date"]' );

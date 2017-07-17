@@ -6,7 +6,6 @@ $I->wantTo( 'test and verify a simple calculation' );
 $I->loginAsAdmin();
 
 $I->amOnPage( '/wp-admin/admin.php?page=ninja-forms&form_id=new' );
-$I->click( '.nf-master-control' );
 
 // Add three number fields for our calculation.
 $I->wait( 2 );
@@ -35,21 +34,27 @@ $I->wait( 1 );
 $I->click( '.nf-close-drawer' );
 $I->wait( 2 );
 
-// Edit our field labels so that our keys get updated as well.
+// Edit our field keys.
 $I->click( '#tmp-1' );
 $I->wait( 2 );
-$I->waitForElement( '#label' );
-$I->fillField( '#label', 'Number1' );
+$I->executeJS( 'jQuery( "h3.toggle" ).each( function() {
+	if( \'Administration\' == jQuery( this ).text() ) {
+		jQuery( this ).click();
+    }
+});' );
+
+$I->waitForElement( '#key' );
+$I->fillField( '#key', 'number1' );
 
 $I->click( '#tmp-2' );
 $I->wait( 2 );
-$I->waitForElement( '#label' );
-$I->fillField( '#label', 'Number2' );
+$I->waitForElement( '#key' );
+$I->fillField( '#key', 'number2' );
 
 $I->click( '#tmp-3' );
 $I->wait( 2 );
-$I->waitForElement( '#label' );
-$I->fillField( '#label', 'Number3' );
+$I->waitForElement( '#key' );
+$I->fillField( '#key', 'number3' );
 
 $I->click( '.nf-close-drawer' );
 $I->wait( 2 );
@@ -65,7 +70,7 @@ $I->wait( 2 );
 $I->click( '.nf-add-new' );
 $I->wait( 1 );
 $I->fillField( '[data-id="name"]', 'calc_1' );
-$I->fillField( '[data-id="eq"]', '{field:number1:calc} + {field:number2:calc} + {field:number3:calc}' );
+$I->fillField( '[data-id="eq"]', '{field:number1} + {field:number2} + {field:number3}' );
 $I->click( '.nf-close-drawer' );
 
 // Update our HTML field to show our calculation
@@ -126,15 +131,15 @@ $I->executeJS( 'jQuery( "#nf-field-7" ).blur();' );
 $I->wait( 1 );
 
 // Check our JS total
-$I->see( 'Total: 15' );
+$I->see( 'Total: 15.00' );
 $I->click( 'Submit' );
 
 // Submit our form and check that our success message has the correct total.
 $I->waitForText( 'Your form has been successfully submitted.' );
-$I->see( 'Total: 15' );
+$I->see( 'Total: 15.00' );
 
 $I->amOnPage( '/wp-admin/edit.php?post_status=all&post_type=nf_sub&form_id=2&paged=1');
 $I->executeJS( 'jQuery( ".row-actions" ).removeClass( "row-actions" );' );
 $I->click( "span.edit > a" );
 $I->wait( 2 );
-$I->seeInField( '[name="fields[10]"]', '15' );
+$I->seeInField( '[name="fields[10]"]', '15.00' );
