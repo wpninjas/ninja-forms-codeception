@@ -106,7 +106,7 @@ PHP
         do
             git clone git@github.com:wpninjas/$REPO.git "$WP_SITE_PATH/wp-content/plugins/$REPO/"
             cd "$WP_SITE_PATH/wp-content/plugins/$REPO/"
-            #git checkout develop
+            # git checkout develop
         done
     fi
     
