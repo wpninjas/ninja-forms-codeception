@@ -7,7 +7,6 @@ $I->wantTo( 'check that the builder drawer opens and fields are added' );
 $I->loginAsAdmin();
 
 $I->amOnPage( '/wp-admin/admin.php?page=ninja-forms&form_id=new' );
-$I->click( '.nf-master-control' );
 $I->waitForText( 'Single Checkbox' );
 $I->click( '[data-id="checkbox"]' );
 $I->waitForElement('.nf-field-wrap', 30); 
