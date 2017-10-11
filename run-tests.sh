@@ -96,7 +96,7 @@ PHP
 
     # Install Ninja Forms
     # wp plugin install ninja-forms --activate --force
-    git clone https://github.com/wpninjas/ninja-forms-codeception.git "$WP_SITE_PATH/wp-content/plugins/ninja-forms/"
+    git clone https://github.com/wpninjas/ninja-forms.git "$WP_SITE_PATH/wp-content/plugins/ninja-forms/"
     cd "$WP_SITE_PATH/wp-content/plugins/ninja-forms/"
     git checkout ${BRANCH}
 
