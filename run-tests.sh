@@ -148,5 +148,5 @@ php ./vendor/bin/codecept run tests/acceptance/
 echo "Shutting down Selenium..."
 pkill -f "java -jar $SERVER_PATH/tmp/$SELENIUM_FILENAME"
 
-echo "Killing Firefox"
-pkill -9 firefox
+echo "Killing Chrome"
+pkill -9 chrome
