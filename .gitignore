@@ -13,7 +13,7 @@ node_modules
 *.sublime-project
 
 # Project Stuff
-tests/_data/*
+# tests/_data/*
 # exception to the rule
 !tests/_data/.gitkeep 
 
