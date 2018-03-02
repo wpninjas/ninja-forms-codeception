@@ -21,10 +21,10 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Returns all the cookies whose name matches a regex pattern.
-	 *
-	 * @param string $cookiePattern
-	 *
-	 * @return array|null
+     *
+     * @param string $cookiePattern
+     *
+     * @return array|null
      * @see \Codeception\Module\WPWebDriver::grabCookiesWithPattern()
      */
     public function grabCookiesWithPattern($cookiePattern) {
@@ -36,8 +36,8 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Waits for any jQuery triggered AJAX request to be resolved.
-	 *
-	 * @param int $time
+     *
+     * @param int $time
      * @see \Codeception\Module\WPWebDriver::waitForJqueryAjax()
      */
     public function waitForJqueryAjax($time = null) {
@@ -2738,8 +2738,8 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Goes to the login page and logs in as the site admin.
-	 *
-	 * @return array An array of login credentials and auth cookies.
+		 *
+		 * @return array An array of login credentials and auth cookies.
      * @see \Codeception\Module\WPWebDriver::loginAsAdmin()
      */
     public function loginAsAdmin() {
@@ -2751,11 +2751,11 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Goes to the login page and logs in using the given credentials.
-	 *
-	 * @param string $username
-	 * @param string $password
-	 *
-	 * @return array An array of login credentials and auth cookies.
+		 *
+		 * @param string $username
+		 * @param string $password
+		 *
+		 * @return array An array of login credentials and auth cookies.
      * @see \Codeception\Module\WPWebDriver::loginAs()
      */
     public function loginAs($username, $password) {
@@ -2767,10 +2767,10 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Returns WordPress default auth cookie if present.
-	 *
-	 * @param null $pattern Optional, overrides the default cookie name.
-	 *
-	 * @return mixed Either a cookie or null.
+		 *
+		 * @param null $pattern Optional, overrides the default cookie name.
+		 *
+		 * @return mixed Either a cookie or null.
      * @see \Codeception\Module\WPWebDriver::grabWordPressAuthCookie()
      */
     public function grabWordPressAuthCookie($pattern = null) {
@@ -2782,10 +2782,10 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Returns WordPress default login cookie if present.
-	 *
-	 * @param null $pattern Optional, overrides the default cookie name.
-	 *
-	 * @return mixed Either a cookie or null.
+		 *
+		 * @param null $pattern Optional, overrides the default cookie name.
+		 *
+		 * @return mixed Either a cookie or null.
      * @see \Codeception\Module\WPWebDriver::grabWordPressLoginCookie()
      */
     public function grabWordPressLoginCookie($pattern = null) {
@@ -2797,12 +2797,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * In the plugin administration screen activates a plugin clicking the "Activate" link.
-	 *
-	 * The method will presume the browser is in the plugin screen already.
-	 *
-	 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
-	 *
-	 * @return void
+		 *
+		 * The method will presume the browser is in the plugin screen already.
+		 *
+		 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
+		 *
+		 * @return void
      * @see \Codeception\Module\WPWebDriver::activatePlugin()
      */
     public function activatePlugin($pluginSlug) {
@@ -2814,12 +2814,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * In the plugin administration screen deactivates a plugin clicking the "Deactivate" link.
-	 *
-	 * The method will presume the browser is in the plugin screen already.
-	 *
-	 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
-	 *
-	 * @return void
+		 *
+		 * The method will presume the browser is in the plugin screen already.
+		 *
+		 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
+		 *
+		 * @return void
      * @see \Codeception\Module\WPWebDriver::deactivatePlugin()
      */
     public function deactivatePlugin($pluginSlug) {
@@ -2831,10 +2831,10 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Navigates the browser to the plugins administration screen.
-	 *
-	 * Makes no check about the user being logged in and authorized to do so.
-	 *
-	 * @return void
+		 *
+		 * Makes no check about the user being logged in and authorized to do so.
+		 *
+		 * @return void
      * @see \Codeception\Module\WPWebDriver::amOnPluginsPage()
      */
     public function amOnPluginsPage() {
@@ -2846,10 +2846,10 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Navigates the browser to the Pages administration screen.
-	 *
-	 * Makes no check about the user being logged in and authorized to do so.
-	 *
-	 * @return void
+		 *
+		 * Makes no check about the user being logged in and authorized to do so.
+		 *
+		 * @return void
      * @see \Codeception\Module\WPWebDriver::amOnPagesPage()
      */
     public function amOnPagesPage() {
@@ -2861,12 +2861,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Looks for a deactivated plugin in the plugin administration screen.
-	 *
-	 * Will not navigate to the plugin administration screen.
-	 *
-	 * @param string $pluginSlug The plugin slug, like "hello-dolly".
-	 *
-	 * @return void
+		 *
+		 * Will not navigate to the plugin administration screen.
+		 *
+		 * @param string $pluginSlug The plugin slug, like "hello-dolly".
+		 *
+		 * @return void
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\WPWebDriver::seePluginDeactivated()
      */
@@ -2877,12 +2877,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Looks for a deactivated plugin in the plugin administration screen.
-	 *
-	 * Will not navigate to the plugin administration screen.
-	 *
-	 * @param string $pluginSlug The plugin slug, like "hello-dolly".
-	 *
-	 * @return void
+		 *
+		 * Will not navigate to the plugin administration screen.
+		 *
+		 * @param string $pluginSlug The plugin slug, like "hello-dolly".
+		 *
+		 * @return void
      * @see \Codeception\Module\WPWebDriver::seePluginDeactivated()
      */
     public function seePluginDeactivated($pluginSlug) {
@@ -2894,12 +2894,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Looks for a plugin in the plugin administration screen.
-	 *
-	 * Will not navigate to the plugin administration screen.
-	 *
-	 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
-	 *
-	 * @return void
+		 *
+		 * Will not navigate to the plugin administration screen.
+		 *
+		 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
+		 *
+		 * @return void
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\WPWebDriver::seePluginInstalled()
      */
@@ -2910,12 +2910,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Looks for a plugin in the plugin administration screen.
-	 *
-	 * Will not navigate to the plugin administration screen.
-	 *
-	 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
-	 *
-	 * @return void
+		 *
+		 * Will not navigate to the plugin administration screen.
+		 *
+		 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
+		 *
+		 * @return void
      * @see \Codeception\Module\WPWebDriver::seePluginInstalled()
      */
     public function seePluginInstalled($pluginSlug) {
@@ -2927,12 +2927,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Looks for an activated plugin in the plugin administration screen.
-	 *
-	 * Will not navigate to the plugin administration screen.
-	 *
-	 * @param string $pluginSlug The plugin slug, like "hello-dolly".
-	 *
-	 * @return void
+		 *
+		 * Will not navigate to the plugin administration screen.
+		 *
+		 * @param string $pluginSlug The plugin slug, like "hello-dolly".
+		 *
+		 * @return void
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\WPWebDriver::seePluginActivated()
      */
@@ -2943,12 +2943,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Looks for an activated plugin in the plugin administration screen.
-	 *
-	 * Will not navigate to the plugin administration screen.
-	 *
-	 * @param string $pluginSlug The plugin slug, like "hello-dolly".
-	 *
-	 * @return void
+		 *
+		 * Will not navigate to the plugin administration screen.
+		 *
+		 * @param string $pluginSlug The plugin slug, like "hello-dolly".
+		 *
+		 * @return void
      * @see \Codeception\Module\WPWebDriver::seePluginActivated()
      */
     public function seePluginActivated($pluginSlug) {
@@ -2960,12 +2960,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Looks for a missing plugin in the plugin administration screen.
-	 *
-	 * Will not navigate to the plugin administration screen.
-	 *
-	 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
-	 *
-	 * @return void
+		 *
+		 * Will not navigate to the plugin administration screen.
+		 *
+		 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
+		 *
+		 * @return void
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\WPWebDriver::dontSeePluginInstalled()
      */
@@ -2976,12 +2976,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Looks for a missing plugin in the plugin administration screen.
-	 *
-	 * Will not navigate to the plugin administration screen.
-	 *
-	 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
-	 *
-	 * @return void
+		 *
+		 * Will not navigate to the plugin administration screen.
+		 *
+		 * @param  string $pluginSlug The plugin slug, like "hello-dolly".
+		 *
+		 * @return void
      * @see \Codeception\Module\WPWebDriver::dontSeePluginInstalled()
      */
     public function dontSeePluginInstalled($pluginSlug) {
@@ -2993,12 +2993,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * In an administration screen will look for an error message.
-	 *
-	 * Allows for class-based error checking to decouple from internationalization.
-	 *
-	 * @param array $classes A list of classes the error notice should have.
-	 *
-	 * @return void
+		 *
+		 * Allows for class-based error checking to decouple from internationalization.
+		 *
+		 * @param array $classes A list of classes the error notice should have.
+		 *
+		 * @return void
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\WPWebDriver::seeErrorMessage()
      */
@@ -3009,12 +3009,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * In an administration screen will look for an error message.
-	 *
-	 * Allows for class-based error checking to decouple from internationalization.
-	 *
-	 * @param array $classes A list of classes the error notice should have.
-	 *
-	 * @return void
+		 *
+		 * Allows for class-based error checking to decouple from internationalization.
+		 *
+		 * @param array $classes A list of classes the error notice should have.
+		 *
+		 * @return void
      * @see \Codeception\Module\WPWebDriver::seeErrorMessage()
      */
     public function seeErrorMessage($classes = null) {
@@ -3026,8 +3026,8 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Checks that the current page is a wp_die generated one.
-	 *
-	 * @return void
+		 *
+		 * @return void
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\WPWebDriver::seeWpDiePage()
      */
@@ -3038,8 +3038,8 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Checks that the current page is a wp_die generated one.
-	 *
-	 * @return void
+		 *
+		 * @return void
      * @see \Codeception\Module\WPWebDriver::seeWpDiePage()
      */
     public function seeWpDiePage() {
@@ -3051,12 +3051,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * In an administration screen will look for a message.
-	 *
-	 * Allows for class-based error checking to decouple from internationalization.
-	 *
-	 * @param array $classes A list of classes the message should have.
-	 *
-	 * @return void
+		 *
+		 * Allows for class-based error checking to decouple from internationalization.
+		 *
+		 * @param array $classes A list of classes the message should have.
+		 *
+		 * @return void
      * Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\WPWebDriver::seeMessage()
      */
@@ -3067,12 +3067,12 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * In an administration screen will look for a message.
-	 *
-	 * Allows for class-based error checking to decouple from internationalization.
-	 *
-	 * @param array $classes A list of classes the message should have.
-	 *
-	 * @return void
+		 *
+		 * Allows for class-based error checking to decouple from internationalization.
+		 *
+		 * @param array $classes A list of classes the message should have.
+		 *
+		 * @return void
      * @see \Codeception\Module\WPWebDriver::seeMessage()
      */
     public function seeMessage($classes = null) {
@@ -3084,10 +3084,10 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Returns WordPress default test cookie if present.
-	 *
-	 * @param null $pattern Optional, overrides the default cookie name.
-	 *
-	 * @return mixed Either a cookie or null.
+		 *
+		 * @param null $pattern Optional, overrides the default cookie name.
+		 *
+		 * @return mixed Either a cookie or null.
      * @see \Codeception\Module\WPWebDriver::grabWordPressTestCookie()
      */
     public function grabWordPressTestCookie($pattern = null) {
@@ -5119,11 +5119,11 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Deletes a database entry.
-	 *
-	 * @param  string $table The table name.
-	 * @param  array $data An associative array of the column names and values to use as deletion criteria.
-	 *
-	 * @return void
+     *
+     * @param  string $table The table name.
+     * @param  array $data An associative array of the column names and values to use as deletion criteria.
+     *
+     * @return void
      * @see \Codeception\Module\ExtendedDb::dontHaveInDatabase()
      */
     public function dontHaveInDatabase($table, $criteria) {
@@ -5135,11 +5135,11 @@ trait AcceptanceTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Inserts or updates a database entry on duplicate key.
-	 *
-	 * @param  string $table The table name.
-	 * @param  array $data An associative array of the column names and values to insert.
-	 *
-	 * @return void
+     *
+     * @param  string $table The table name.
+     * @param  array $data An associative array of the column names and values to insert.
+     *
+     * @return void
      * @see \Codeception\Module\ExtendedDb::haveOrUpdateInDatabase()
      */
     public function haveOrUpdateInDatabase($table, $data) {
